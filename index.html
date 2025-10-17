@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Buat undangan digital yang elegan dan mudah untuk pernikahan, ulang tahun, acara perusahaan. Desain profesional dengan fitur lengkap.">
+    <meta name="keywords"
+        content="undangan digital, undangan online, undangan pernikahan digital, undangan ulang tahun, buat undangan digital, undangan elegan">
+    <title>Undangan Digital - Solusi Modern untuk Acara Anda</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #8B5FBF;
+            --secondary: #FF6B6B;
+            --accent: #4ECDC4;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #6a3093 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,165.3C960,149,1056,139,1152,149.3C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .pricing-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border: 2px solid var(--primary);
+        }
+
+        .pricing-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #7a4da8;
+            border-color: #7a4da8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background-color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 15px 20px;
+            max-height: 500px;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+
+        .footer-links h5 {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #6a3093 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .demo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .demo-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--primary);">UndanganDigital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Fitur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#templates">Template</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Harga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#pricing">Buat Undangan</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Undangan Digital yang Elegan untuk Acara Spesial Anda</h1>
+                    <p class="lead mb-4">Buat undangan pernikahan, ulang tahun, atau acara perusahaan yang mengesankan
+                        dengan mudah. Desain profesional, responsif, dan ramah lingkungan.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#pricing" class="btn btn-light btn-lg">Buat Sekarang</a>
+                        <a href="#features" class="btn btn-outline-light btn-lg">Lihat Fitur</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="Contoh Undangan Digital" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Mengapa Memilih Undangan Digital?</h2>
+                    <p class="text-muted">Solusi modern dengan berbagai keunggulan untuk pengalaman mengundang yang
+                        lebih baik</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Cepat & Mudah</h4>
+                        <p class="text-muted">Buat undangan profesional dalam hitungan menit dengan editor drag-and-drop
+                            yang intuitif. Tidak perlu keterampilan desain khusus.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsif</h4>
+                        <p class="text-muted">Tampilan optimal di semua perangkat - desktop, tablet, dan smartphone.
+                            Tamu Anda dapat melihat undangan dengan nyaman di perangkat apapun.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Ramah Lingkungan</h4>
+                        <p class="text-muted">Kurangi penggunaan kertas dan dampak lingkungan dengan undangan digital.
+                            Pilihan yang tepat untuk bumi yang lebih hijau.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Integrasi Maps</h4>
+                        <p class="text-muted">Sematkan peta lokasi acara secara langsung. Tamu dapat dengan mudah
+                            menemukan lokasi dengan satu klik.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Pengingat Otomatis</h4>
+                        <p class="text-muted">Sistem akan mengirimkan pengingat otomatis kepada tamu sebelum acara
+                            berlangsung, mengurangi kemungkinan mereka lupa.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Pelacakan RSVP</h4>
+                        <p class="text-muted">Pantau siapa saja yang telah membuka undangan dan mengonfirmasi kehadiran
+                            secara real-time melalui dashboard Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section id="templates" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Template Elegan untuk Setiap Acara</h2>
+                    <p class="text-muted">Pilih dari berbagai desain profesional yang dapat disesuaikan dengan tema
+                        acara Anda</p>
+                </div>
+            </div>
+            <div class="demo-gallery">
+                <div class="demo-item">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Template Undangan Pernikahan Klasik">
+                    <div class="p-3">
+                        <h5>Klasik Elegan</h5>
+                        <p class="small text-muted">Untuk pernikahan tradisional</p>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Template Undangan Modern">
+                    <div class="p-3">
+                        <h5>Modern Minimalis</h5>
+                        <p class="small text-muted">Desain bersih dan kontemporer</p>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Template Undangan Ulang Tahun">
+                    <div class="p-3">
+                        <h5>Ulang Tahun Ceria</h5>
+                        <p class="small text-muted">Warna-warni dan menyenangkan</p>
+                    </div>
+                </div>
+                <div class="demo-item">
+                    <img src="https://images.unsplash.com/photo-1559309106-ed14040fd35d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Template Undangan Perusahaan">
+                    <div class="p-3">
+                        <h5>Profesional Bisnis</h5>
+                        <p class="small text-muted">Untuk acara korporat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#pricing" class="btn btn-primary">Lihat Semua Template</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Cara Membuat Undangan Digital</h2>
+                    <p class="text-muted">Hanya dalam 4 langkah mudah, undangan Anda siap dibagikan</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="h3 mb-0">1</span>
+                    </div>
+                    <h4>Pilih Template</h4>
+                    <p class="text-muted">Pilih dari berbagai template yang sesuai dengan tema acara Anda.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="h3 mb-0">2</span>
+                    </div>
+                    <h4>Kustomisasi</h4>
+                    <p class="text-muted">Edit teks, tambahkan foto, dan sesuaikan warna sesuai keinginan.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="h3 mb-0">3</span>
+                    </div>
+                    <h4>Tambahkan Detail</h4>
+                    <p class="text-muted">Masukkan informasi acara, lokasi, dan konfirmasi kehadiran.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                        style="width: 80px; height: 80px;">
+                        <span class="h3 mb-0">4</span>
+                    </div>
+                    <h4>Bagikan</h4>
+                    <p class="text-muted">Kirim melalui WhatsApp, email, atau media sosial dengan satu klik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Pilih Paket yang Tepat</h2>
+                    <p class="text-muted">Berbagai pilihan paket sesuai kebutuhan dan budget Anda</p>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h4>Dasar</h4>
+                            <p>Cocok untuk acara kecil</p>
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="pricing-price">
+                                <span class="h3">Rp 49.000</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> 1 Template Pilihan</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Maksimal 50 Tamu</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Integrasi Google Maps
+                                </li>
+                                <li class="py-2"><i class="fas fa-times text-muted me-2"></i> Pengingat Otomatis</li>
+                                <li class="py-2"><i class="fas fa-times text-muted me-2"></i> Pelacakan RSVP</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card popular">
+                        <div class="pricing-header">
+                            <h4>Premium</h4>
+                            <p>Paling Populer</p>
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="pricing-price">
+                                <span class="h3">Rp 99.000</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Semua Template</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Maksimal 200 Tamu</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Integrasi Google Maps
+                                </li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Pengingat Otomatis</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Pelacakan RSVP</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">Pilih Paket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h4>Enterprise</h4>
+                            <p>Untuk bisnis & acara besar</p>
+                        </div>
+                        <div class="p-4 text-center">
+                            <div class="pricing-price">
+                                <span class="h3">Rp 199.000</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Semua Template + Kustom
+                                </li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Tamu Tidak Terbatas</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Integrasi Google Maps
+                                </li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Pengingat Otomatis</li>
+                                <li class="py-2"><i class="fas fa-check text-success me-2"></i> Dashboard Analytics
+                                    Lengkap</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Pilih Paket</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+                    <p class="text-muted">Ribuan orang telah mempercayai undangan digital untuk acara spesial mereka</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Testimonial"
+                                class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Sarah Wijaya</h5>
+                                <p class="text-muted mb-0">Pernikahan</p>
+                            </div>
+                        </div>
+                        <p class="text-muted">"Undangan digital untuk pernikahan kami mendapat banyak pujian dari tamu.
+                            Desainnya elegan dan sangat mudah dibuat. Pelacakan RSVP sangat membantu untuk perencanaan!"
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Testimonial"
+                                class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Budi Santoso</h5>
+                                <p class="text-muted mb-0">Ulang Tahun</p>
+                            </div>
+                        </div>
+                        <p class="text-muted">"Saya menggunakan undangan digital untuk pesta ulang tahun anak saya.
+                            Tamu-tamu sangat senang dengan kemudahan aksesnya. Pengingat otomatis juga sangat membantu!"
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Testimonial"
+                                class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Diana Putri</h5>
+                                <p class="text-muted mb-0">Acara Perusahaan</p>
+                            </div>
+                        </div>
+                        <p class="text-muted">"Sebagai event organizer, saya sering menggunakan layanan ini untuk klien
+                            perusahaan. Desain profesional dan fitur RSVP yang terintegrasi sangat memudahkan pekerjaan
+                            saya."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+                    <p class="text-muted">Temukan jawaban untuk pertanyaan umum tentang undangan digital</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bagaimana cara membuat undangan digital?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-muted">Pilih template yang Anda sukai, kustomisasi dengan informasi acara
+                                Anda, tambahkan foto jika diinginkan, dan bagikan link undangan melalui WhatsApp, email,
+                                atau media sosial. Prosesnya hanya membutuhkan beberapa menit!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Apakah tamu perlu mengunduh aplikasi khusus?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-muted">Tidak sama sekali! Undangan digital dapat diakses melalui browser di
+                                perangkat apapun - smartphone, tablet, atau komputer. Tamu Anda hanya perlu mengklik
+                                link yang Anda kirim.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bagaimana sistem RSVP bekerja?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-muted">Setiap undangan memiliki tombol konfirmasi kehadiran. Ketika tamu
+                                mengklik tombol tersebut, informasi langsung tercatat di dashboard Anda. Anda dapat
+                                memantau jumlah tamu yang akan hadir secara real-time.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Berapa lama undangan digital aktif?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-muted">Undangan digital akan aktif hingga 3 bulan setelah tanggal acara.
+                                Untuk paket Enterprise, undangan dapat tetap aktif lebih lama sesuai permintaan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bisakah saya mengedit undangan setelah dibagikan?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-muted">Ya, Anda dapat mengedit informasi di undangan kapan saja, bahkan
+                                setelah dibagikan. Perubahan akan langsung terlihat oleh tamu yang membuka link
+                                undangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Siap Membuat Undangan Digital?</h2>
+                    <p class="lead mb-4">Jadikan acara Anda lebih spesial dengan undangan digital yang elegan dan
+                        praktis.</p>
+                    <a href="#pricing" class="btn btn-light btn-lg">Buat Undangan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-3">UndanganDigital</h4>
+                    <p class="text-muted">Platform undangan digital terdepan di Indonesia. Membantu Anda membuat
+                        undangan yang elegan, praktis, dan ramah lingkungan.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h5>Menu</h5>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#features">Fitur</a></li>
+                        <li><a href="#templates">Template</a></li>
+                        <li><a href="#pricing">Harga</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h5>Layanan</h5>
+                    <ul>
+                        <li><a href="#">Undangan Pernikahan</a></li>
+                        <li><a href="#">Undangan Ulang Tahun</a></li>
+                        <li><a href="#">Undangan Perusahaan</a></li>
+                        <li><a href="#">Undangan Khitanan</a></li>
+                        <li><a href="#">Undangan Aqiqah</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer-links">
+                    <h5>Kontak</h5>
+                    <ul class="text-muted">
+                        <li><i class="fas fa-envelope me-2"></i> info@undangandigital.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +62 21 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 UndanganDigital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Smooth scrolling
+        $(document).ready(function () {
+            $('a[href*="#"]').on('click', function (e) {
+                e.preventDefault();
+
+                $('html, body').animate(
+                    {
+                        scrollTop: $($(this).attr('href')).offset().top - 70,
+                    },
+                    500,
+                    'linear'
+                );
+            });
+
+            // FAQ Toggle
+            $('.faq-question').on('click', function () {
+                $(this).next('.faq-answer').toggleClass('active');
+                $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+            });
+
+            // Navbar background on scroll
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
